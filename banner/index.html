@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="slider">
+		<div class="wrapper">
+			<a href="https://www.volkswagen.com/" class="control"><button>Пройди тест-драйв</button></a>
+			<a href="https://www.volkswagen.com/" class="control_next"><button>Узнать больше</button></a>
+			<ul>
+				<li style="background-image: url(img/back1.png)"></li>
+				<li style="background-image: url(img/back2.png)"></li>
+				<li style="background-image: url(img/back3.png)"></li>
+				<li style="background-image: url(img/back4.png)">
+					<p class="text">Иновационно Ваш</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>jQuery(document).ready(function ($) {
+
+			$('#slider').ready(function () {
+				setInterval(function () {
+					moveRight();
+				}, 2500);
+			});
+
+			var slideCount = $('#slider ul li').length;
+			var slideWidth = $('#slider ul li').width();
+			var slideHeight = $('#slider ul li').height();
+			var sliderUlWidth = slideCount * slideWidth;
+
+			$('#slider').css({ width: slideWidth, height: slideHeight });
+
+			$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+			$('#slider ul li:last-child').prependTo('#slider ul');
+
+			function moveLeft() {
+				$('#slider ul').animate({
+					left: + slideWidth
+				}, 400, function () {
+					$('#slider ul li:last-child').prependTo('#slider ul');
+					$('#slider ul').css('left', '');
+				});
+			};
+
+			function moveRight() {
+				$('#slider ul').animate({
+					left: - slideWidth
+				}, 400, function () {
+					$('#slider ul li:first-child').appendTo('#slider ul');
+					$('#slider ul').css('left', '');
+				});
+			};
+		});    
+	</script>
+</body>
+
+</html>

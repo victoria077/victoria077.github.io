@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600); 
+
+
+html {
+  border-top: 5px solid #fff;
+  background: #58DDAF;
+  color: #2a2a2a;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+}
+
+#slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width:  240px;
+  height: 400px;
+  list-style: none;
+}
+
+#slider ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width:  240px;
+  height: 400px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control, a.control_next {
+  position: absolute;
+  top: 90%;
+  z-index: 999;
+  display: block;
+  width: auto;
+  height: auto;
+  color: #2274ac;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button{
+  background-color: #2274ac;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px 4px;
+  margin: 7px;
+  border-radius: 3px;
+}
+
+
+a.control {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.text{
+  color: #fff;
+  font-size: 18px;
+  margin-top: -80px;
+  margin-left: -40px;
+  font-weight: bold;
+  animation-duration: 8s;
+  animation-name: text-focus-in;
+}
+
+@-webkit-keyframes text-focus-in{
+  0%{-webkit-filter:blur(12px);
+    filter:blur(12px);opacity:0}
+  100%{-webkit-filter:blur(0);
+    filter:blur(0);opacity:1}}
+    
+@keyframes text-focus-in{
+  0%{-webkit-filter:blur(12px);
+    filter:blur(12px);opacity:0}
+  100%{-webkit-filter:blur(0);
+    filter:blur(0);opacity:1}
+}
